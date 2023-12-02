@@ -7,14 +7,14 @@ print(type('\'PY_119 \n  the best!'))
 # 1 2 3 abc
 
 
-# print(3, 2, 1, "abc", sep=" ", end="\n")
+print(3, 2, 1, "abc", sep=" ", end="\n")
 
 
-# print('02', 12, 2023, sep='-', end=' year')
-# print('-------------', end="\n\n\n\n\n")
+print('02', 12, 2023, sep='-', end=' year')
+print('-------------', end="\n\n\n\n\n")
 
-# print("1\t2")
-# print("1 2")
+print("1\t2")
+print("1 2")
 
 FIRST_NAME = ""
 
