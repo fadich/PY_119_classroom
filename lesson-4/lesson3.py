@@ -57,7 +57,7 @@ n = None
 
 user_input = None  # bool(False)
 user_input = ""  # bool(False)
-user_input = "My name is ..."
+user_input = "My names is ..."
 if user_input is not None:
     print("True")
 else:

@@ -46,11 +46,11 @@ full_name = "%s %s"
 print(full_name)
 
 # 5.2
-full_name = "First name: %s; Last nam: %s." % (first_name, last_name)
+full_name = "First names: %s; Last nam: %s." % (first_name, last_name)
 print(full_name)
 
 # 6.1
-full_name = "His name is: {}. And surname: {}".format(first_name, last_name)
+full_name = "His names is: {}. And surname: {}".format(first_name, last_name)
 print(full_name)
 
 # 6.2

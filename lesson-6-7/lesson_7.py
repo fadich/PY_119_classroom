@@ -12,4 +12,4 @@ while len(b) < 10:
     b.append(number_b)
 
 c = list(set(a).difference(set(b)))
-print(c)
+# print(c)
