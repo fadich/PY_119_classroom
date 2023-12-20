@@ -1,3 +1,8 @@
+__all__ = [
+    "get_weather",
+]
+
+
 print("-1 weather.py")
 import random
 
@@ -12,5 +17,6 @@ def get_weather(date):
     if number == 0:
         return "Sunny"
     return "Raining"
+
 
 print("1 weather.py")
