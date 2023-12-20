@@ -20,3 +20,7 @@ def get_weather(date):
 
 
 print("1 weather.py")
+
+
+# [!!!] SyntaxError
+a = "

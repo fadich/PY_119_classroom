@@ -4,7 +4,16 @@ from random import random
 from export_all import *
 import export_all
 
-from weather.client import get_weather
+
+try:
+    import bbbbbb
+except ImportError:
+    print("ImportError")
+
+try:
+    from weather.client import get_weather
+except SyntaxError:
+    print("SyntaxError")
 
 
 print(datetime.now())
