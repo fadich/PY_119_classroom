@@ -1,24 +1,14 @@
 
 line = "A quick brown fox jumps over the lazy dog"
 
-open("..\my_file.txt", "b")
+file = open("my_file.txt", "r")
 
 
-def aaa(a, b, c):
-    pass
+# while True:
+#     a = file.read(3)
+#     if not a:
+#         break
+#     print(a)
 
+print(repr(file.read()))
 
-a = {
-    "a": 1,
-    "b": 2,
-    "c": 3,
-    "d": 4,
-
-}
-aaa(
-    a=1,
-    b=2,
-    c=3,
-)
-
-aaa(1, 2, 3)
