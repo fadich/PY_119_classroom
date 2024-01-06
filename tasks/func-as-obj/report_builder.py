@@ -60,3 +60,6 @@ def generate_yaml_report(
     filepath: str,
 ):
     raise NotImplementedError("YAML format does not supported yet")
+
+
+generate_yml_report = generate_yaml_report
