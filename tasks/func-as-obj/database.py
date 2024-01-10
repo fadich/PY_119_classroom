@@ -22,7 +22,7 @@ report_data = [
     },
     {
         "name": "Legolas",
-        "race": "Elf",
+        "race": "ElfCharacter",
         "location": "Mirkwood",
         "role": "Archer",
         "orcs_defeated": 150,
@@ -57,9 +57,9 @@ report_data = [
     },
     {
         "name": "Galadriel",
-        "race": "Elf",
+        "race": "ElfCharacter",
         "location": "Lothlorien",
-        "role": "Elf Queen",
+        "role": "ElfCharacter Queen",
         "orcs_defeated": 20,
     },
     {
