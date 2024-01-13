@@ -2,12 +2,13 @@ import os.path
 import sys
 
 from database import report_data
-# from report_builder import (
-#     generate_csv_report,
-#     generate_txt_report,
-#     generate_json_report,
-#     generate_yaml_report,
-# )
+from report_builder import (
+    Report,
+    CsvReport,
+    TxtReport,
+    JsonReport,
+    YamlReport,
+)
 
 import report_builder
 
@@ -27,42 +28,52 @@ def generate_report(filepath: str):
         raise NotImplementedError("ext was not provided!!")
 
     # Option 1
-    report_generators = {
-        "csv": generate_csv_report,
-        "txt": generate_txt_report,
-        "json": generate_json_report,
-        "yml": generate_yaml_report,
-        "yaml": generate_yaml_report,
-    }
-
-    if ext not in report_generators:
-        raise NotImplementedError(f"Unsupported format: {ext}")
-
-    report_generator = report_generators[ext]
-    report_generator(
-        filepath=filepath,
-        data=report_data,
-    )
+    # report_generator_classes = {
+    #     "csv": CsvReport,
+    #     "txt": TxtReport,
+    #     "json": JsonReport,
+    #     "yml": YamlReport,
+    #     "yaml": YamlReport,
+    # }
+    #
+    # if ext not in report_generator_classes:
+    #     raise NotImplementedError(f"Unsupported format: {ext}")
+    #
+    # report_generator = report_generators[ext]
+    # report_generator(
+    #     filepath=filepath,
+    #     data=report_data,
+    # )
 
     # Option 2
-    # if ext == "csv":
-    #     generate_csv_report(**kwargs)
-    # elif ext == "txt":
-    #     generate_txt_report(**kwargs)
-    # elif ext == "json":
-    #     generate_json_report(**kwargs)
-    # elif ext == "yaml":
-    #     generate_yaml_report(**kwargs)
-    # elif ext in ("yml", "yaml"):
-    #     generate_yaml_report(**kwargs)
+
+    kwargs = {
+        "data": report_data,
+        "filepath": filepath,
+    }
+    if ext == "csv":
+        report: Report = CsvReport(**kwargs)
+    elif ext == "txt":
+        report: Report = TxtReport(**kwargs)
+    elif ext == "json":
+        report: Report = JsonReport(**kwargs)
+    elif ext in ("yml", "yaml"):
+        report: Report = YamlReport(**kwargs)
+    else:
+        raise NotImplementedError("Report format does not supported")
+
+    report.generate()
+    print(report.filepath)
+    print(report.data)
+    print(isinstance(report, Report))
 
     # Option 3
-    if hasattr(report_builder, f"generate_{ext}_report"):
-        report_generator = getattr(report_builder, f"generate_{ext}_report")
-        report_generator(
-            filepath=filepath,
-            data=report_data,
-        )
+    # if hasattr(report_builder, f"generate_{ext}_report"):
+    #     report_generator = getattr(report_builder, f"generate_{ext}_report")
+    #     report_generator(
+    #         filepath=filepath,
+    #         data=report_data,
+    #     )
 
 
 def main(*args):

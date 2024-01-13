@@ -47,13 +47,19 @@ del room
 ###############################################################################
 
 
-class Character:
+class Eater:
+
+    def eat(self):
+        raise NotImplementedError()
+
+
+class Character(Eater):
 
     def eat(self):
         ...
 
 
-class Robot:
+class Robot(Eater):
 
     def __init__(self):
         self.c = Character()
@@ -68,3 +74,4 @@ r.c.eat()
 
 
 print(isinstance(r, Character))  # False
+print(isinstance(r, Eater))  # True
