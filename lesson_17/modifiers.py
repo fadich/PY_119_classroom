@@ -21,7 +21,7 @@ class B(A):
     def test(self):
         self.public()
         self._protected()
-        self._B__private()
+        self._B__private()  # Error!
 
 
 if __name__ == "__main__":
