@@ -13,7 +13,7 @@ class Store:
     def get_income(self):
         return self._income
 
-    def set_income(self, value):
+    def set_income(self, value: float):
         self._income = value
 
     def get_store(self):
@@ -31,5 +31,6 @@ if __name__ == "__main__":
 
     st = store.get_store()
     st.append(123)
+
 
     print(store._store)
