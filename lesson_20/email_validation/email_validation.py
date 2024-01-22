@@ -1,6 +1,10 @@
 import re
 
 
+class InvalidEmailError(ValueError):
+    pass
+
+
 class Email:
     PATTERN = (r'^(\"[^@]{1,62}\"@[a-zA-Z\d]+\.[a-zA-Z]{2,}$)'
                r'|'
@@ -42,7 +46,7 @@ class Email:
         if self.validate(value):
             self._email = value
         else:
-            raise ValueError(
+            raise InvalidEmailError(
                 f'{self} -> {value} - Provided email is not valid'
             )
 
