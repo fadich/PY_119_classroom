@@ -27,7 +27,7 @@ class HashTableExample:
         return self.storage[hash_value] == item
 
     @classmethod
-    def get_hash(cls, item: Any) -> int:
+    def get_hash(cls, item: Any) -> int:  # 0..9
         return len(str(item)) % 10
 
 
