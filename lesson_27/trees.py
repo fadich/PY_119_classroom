@@ -31,6 +31,19 @@ def print_tree(category: Category, ident: int = 0):
         print_tree(child, ident + 1)
 
 
+def find(category: Category, name: str) -> Optional[Category]:
+    print(f"... {category}")
+    if category.name == name:
+        return category
+
+    for child in category.children:
+        value = find(child, name)
+        if value is not None:
+            return value
+
+    return None
+
+
 if __name__ == '__main__':
     strings = Category("strings", parent=None)
     beats = Category("beats", parent=None)
@@ -53,3 +66,7 @@ if __name__ == '__main__':
     beats = Category("beats", parent=strings)
     drums = Category("drums", parent=beats)
     print_tree(strings, 1)
+
+    print("===")
+    cat = find(strings, "123456")
+    print(cat)
