@@ -16,7 +16,7 @@ def bobble_sort(lst: List[str]):
     return lst
 
 
-def insert_(lst: List[str]):
+def insert_(lst: List[str]):  # Selection
     length = len(lst)
     for i in range(length - 1, 0, -1):
         for j in range(i - 1, -1, -1):
