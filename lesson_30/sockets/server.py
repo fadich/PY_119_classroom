@@ -2,6 +2,7 @@ import socket
 
 HOST = "192.168.50.222"
 PORT = 80
+
 with socket.socket() as s:
     s.bind((HOST, PORT))
     s.listen(1)
