@@ -38,7 +38,6 @@ for u in urls:
     thrs.append(thr)
     thr.start()
 
-time.sleep(10)
 
 for thr in thrs:
     thr.join()
