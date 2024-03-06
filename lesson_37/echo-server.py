@@ -12,10 +12,13 @@ with socket.socket() as s:
     conn, addr = s.accept()
     with conn:
         print("Connected by", addr)
+        conn.sendall("Hello".encode())
         while True:
-            data = conn.recv(1024)
-            if not data:
+            while True:
+
+                data = conn.recv(1024)
+                if not data:
+                    break
+                print(data)
+                conn.sendall(data)
                 break
-            print(data)
-            conn.sendall(data)
-            break
