@@ -1,0 +1,76 @@
+version: "3.8"
+
+
+services:
+
+  py-119-db-1:
+    image: library/postgres:13
+    restart: unless-stopped
+    ports:
+      - "5401:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./py-119-db-1:/var/lib/postgresql/data
+
+  py-119-db-2:
+    image: library/postgres:13
+    restart: unless-stopped
+    ports:
+      - "5402:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./py-119-db-2:/var/lib/postgresql/data
+
+  py-119-db-3:
+    image: library/postgres:13
+    restart: unless-stopped
+    ports:
+      - "5403:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./py-119-db-3:/var/lib/postgresql/data
+
+  py-119-db-4:
+    image: library/postgres:13
+    restart: unless-stopped
+    ports:
+      - "5404:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./py-119-db-4:/var/lib/postgresql/data
+
+  py-119-db-5:
+    image: library/postgres:13
+    restart: unless-stopped
+    ports:
+      - "5405:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./py-119-db-5:/var/lib/postgresql/data
+
+  py-119-db-6:
+    image: library/postgres:13
+    restart: unless-stopped
+    ports:
+      - "5406:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./py-119-db-6:/var/lib/postgresql/data
