@@ -3,8 +3,11 @@ import threading
 import time
 import json
 
-HOST = "18.199.52.175"
-PORT = 8877
+# HOST = "18.199.52.175"
+# PORT = 8877
+
+HOST = "127.0.0.1"
+PORT = 8080
 
 
 def print_massage(sck: socket.socket):
